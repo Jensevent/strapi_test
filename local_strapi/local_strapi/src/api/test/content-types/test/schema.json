@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tests",
+  "info": {
+    "singularName": "test",
+    "pluralName": "tests",
+    "displayName": "Test",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "TestMessage": {
+      "type": "string"
+    },
+    "TestId": {
+      "type": "customField",
+      "customField": "plugin::field-uuid.uuid"
+    }
+  }
+}

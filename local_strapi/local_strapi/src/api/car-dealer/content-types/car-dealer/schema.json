@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "car_dealers",
+  "info": {
+    "singularName": "car-dealer",
+    "pluralName": "car-dealers",
+    "displayName": "CarDealer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "DealerCars": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::car.car",
+      "inversedBy": "CarDealers"
+    },
+    "CarDealerId": {
+      "type": "customField",
+      "customField": "plugin::field-uuid.uuid"
+    }
+  }
+}

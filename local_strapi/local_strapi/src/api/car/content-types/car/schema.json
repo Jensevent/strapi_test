@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cars",
+  "info": {
+    "singularName": "car",
+    "pluralName": "cars",
+    "displayName": "Car",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "CarParts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::part.part"
+    },
+    "CarDealers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::car-dealer.car-dealer",
+      "mappedBy": "DealerCars"
+    },
+    "Brand": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::brand.brand"
+    },
+    "CarId": {
+      "type": "customField",
+      "customField": "plugin::field-uuid.uuid"
+    }
+  }
+}
